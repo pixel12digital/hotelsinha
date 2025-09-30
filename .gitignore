@@ -1,0 +1,47 @@
+# Arquivos temporários
+*.tmp
+*.temp
+*~
+
+# Logs
+*.log
+logs/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependências (se houver)
+node_modules/
+vendor/
+
+# Arquivos de backup
+*.bak
+*.backup
+
+# Arquivos de cache
+.cache/
+*.cache
+
+# Arquivos de configuração local
+.env
+.env.local
+.env.production
+
+# Arquivos de build (se houver)
+dist/
+build/
+
+# Arquivos de teste
+test-results/
+coverage/
+
+# Arquivos específicos do projeto
+# (adicione aqui arquivos que não devem ser versionados)
