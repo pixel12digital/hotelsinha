@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ========================================
+     HOTEL SINHÁ - BROWSERCONFIG.XML
+     ======================================== -->
+<browserconfig>
+    <msapplication>
+        <tile>
+            <!-- TODO: Criar tiles para Windows -->
+            <square70x70logo src="assets/img/ui/favicon.png"/>
+            <square150x150logo src="assets/img/ui/favicon.png"/>
+            <square310x310logo src="assets/img/ui/favicon.png"/>
+            <wide310x150logo src="assets/img/ui/favicon.png"/>
+            <TileColor>#2f5f3b</TileColor>
+        </tile>
+    </msapplication>
+    
+    <!-- TODO: Configurar quando necessário -->
+    <!--
+    <msapplication-notification>
+        <polling-uri src="https://hotelsinha.com.br/notifications/polling"/>
+        <polling-uri2 src="https://hotelsinha.com.br/notifications/polling2"/>
+        <polling-uri3 src="https://hotelsinha.com.br/notifications/polling3"/>
+        <polling-uri4 src="https://hotelsinha.com.br/notifications/polling4"/>
+        <polling-uri5 src="https://hotelsinha.com.br/notifications/polling5"/>
+        <frequency>30</frequency>
+        <cycle>1</cycle>
+    </msapplication-notification>
+    -->
+</browserconfig>

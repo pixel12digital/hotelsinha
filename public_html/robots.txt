@@ -1,0 +1,81 @@
+# ========================================
+# HOTEL SINHÁ - ROBOTS.TXT
+# ========================================
+
+# Permite acesso a todos os crawlers
+User-agent: *
+
+# Permite indexação de todas as páginas
+Allow: /
+
+# Sitemap location
+Sitemap: https://hotelsinha.com.br/sitemap.xml
+
+# Diretórios que não devem ser indexados
+Disallow: /forms/
+Disallow: /assets/js/
+Disallow: /.htaccess
+Disallow: /manifest.webmanifest
+Disallow: /browserconfig.xml
+
+# Arquivos específicos
+Disallow: /*.log$
+Disallow: /*.bak$
+Disallow: /*.tmp$
+
+# Crawl delay (opcional - 1 segundo entre requisições)
+Crawl-delay: 1
+
+# ========================================
+# CONFIGURAÇÕES ESPECÍFICAS POR BOT
+# ========================================
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Facebook External Hit
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitterbot
+User-agent: Twitterbot
+Allow: /
+
+# LinkedIn Bot
+User-agent: LinkedInBot
+Allow: /
+
+# ========================================
+# BOTS MALICIOSOS (BLOQUEADOS)
+# ========================================
+
+# Bots de spam e scraping
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# ========================================
+# NOTAS
+# ========================================
+
+# TODO: Atualizar URL do sitemap quando domínio estiver ativo
+# TODO: Revisar configurações após implementação completa
+# TODO: Monitorar logs de acesso para ajustar configurações

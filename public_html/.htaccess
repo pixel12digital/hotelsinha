@@ -1,0 +1,264 @@
+# ========================================
+# HOTEL SINHÁ - CONFIGURAÇÕES APACHE
+# ========================================
+
+# ========================================
+# COMPRESSÃO E OTIMIZAÇÃO
+# ========================================
+
+# Gzip Compression
+<IfModule mod_deflate.c>
+    # Comprime HTML, CSS, JavaScript, Text, XML e fonts
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/x-font
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+    AddOutputFilterByType DEFLATE application/x-font-otf
+    AddOutputFilterByType DEFLATE application/x-font-truetype
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/xml
+    
+    # Remove header do navegador (problemas de compatibilidade)
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
+</IfModule>
+
+# Brotli Compression (se disponível)
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/plain
+    AddOutputFilterByType BROTLI_COMPRESS text/html
+    AddOutputFilterByType BROTLI_COMPRESS text/xml
+    AddOutputFilterByType BROTLI_COMPRESS text/css
+    AddOutputFilterByType BROTLI_COMPRESS application/xml
+    AddOutputFilterByType BROTLI_COMPRESS application/xhtml+xml
+    AddOutputFilterByType BROTLI_COMPRESS application/rss+xml
+    AddOutputFilterByType BROTLI_COMPRESS application/javascript
+    AddOutputFilterByType BROTLI_COMPRESS application/x-javascript
+    AddOutputFilterByType BROTLI_COMPRESS image/svg+xml
+</IfModule>
+
+# ========================================
+# CACHE HEADERS
+# ========================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # HTML - Cache curto (1 hora)
+    ExpiresByType text/html "access plus 1 hour"
+    
+    # CSS e JavaScript - Cache longo (1 ano)
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+    
+    # Imagens - Cache longo (1 ano)
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Vídeos - Cache longo (1 ano)
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+    ExpiresByType video/ogg "access plus 1 year"
+    
+    # Fonts - Cache longo (1 ano)
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # Manifest e outros - Cache médio (1 mês)
+    ExpiresByType application/manifest+json "access plus 1 month"
+    ExpiresByType text/xml "access plus 1 month"
+    ExpiresByType application/xml "access plus 1 month"
+</IfModule>
+
+# Cache-Control Headers
+<IfModule mod_headers.c>
+    # CSS e JavaScript
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Imagens
+    <FilesMatch "\.(png|jpg|jpeg|gif|webp|svg|ico)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # Vídeos
+    <FilesMatch "\.(mp4|webm|ogg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # HTML
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+    
+    # Manifest
+    <FilesMatch "\.(webmanifest|xml)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+</IfModule>
+
+# ========================================
+# REDIRECIONAMENTO HTTPS
+# ========================================
+
+# Forçar HTTPS (ativar quando SSL estiver ok)
+# <IfModule mod_rewrite.c>
+#   RewriteEngine On
+#   RewriteCond %{HTTPS} !=on
+#   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# </IfModule>
+
+# ========================================
+# TIPOS MIME
+# ========================================
+
+<IfModule mod_mime.c>
+    # WebP
+    AddType image/webp .webp
+    
+    # AVIF
+    AddType image/avif .avif
+    
+    # Web Manifest
+    AddType application/manifest+json .webmanifest
+    
+    # Fonts
+    AddType font/woff2 .woff2
+    AddType font/woff .woff
+    AddType font/ttf .ttf
+    AddType font/otf .otf
+    
+    # Vídeos
+    AddType video/mp4 .mp4
+    AddType video/webm .webm
+    AddType video/ogg .ogv
+    
+    # Outros
+    AddType application/json .json
+    AddType text/xml .xml
+</IfModule>
+
+# ========================================
+# SEGURANÇA
+# ========================================
+
+# Previne acesso a arquivos sensíveis
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Headers de segurança
+<IfModule mod_headers.c>
+    # X-Frame-Options
+    Header always set X-Frame-Options "SAMEORIGIN"
+    
+    # X-Content-Type-Options
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # X-XSS-Protection
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Referrer Policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Content Security Policy (básico)
+    # TODO: Ajustar CSP conforme necessário
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' data: https://fonts.gstatic.com;"
+    
+    # CORS para fontes/manifest
+    <FilesMatch "\.(woff2|webmanifest)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+
+# ========================================
+# OTIMIZAÇÕES DE PERFORMANCE
+# ========================================
+
+# Remove ETags (usar Cache-Control)
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# Previne hotlinking de imagens
+RewriteEngine On
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?hotelsinha\.com\.br [NC]
+RewriteCond %{HTTP_REFERER} !^https?://(www\.)?localhost [NC]
+RewriteRule \.(jpg|jpeg|png|gif|webp)$ - [F]
+
+# ========================================
+# URLS AMIGÁVEIS
+# ========================================
+
+# Remove extensão .html das URLs
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Redireciona .html para URL sem extensão
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# ========================================
+# PÁGINAS DE ERRO PERSONALIZADAS
+# ========================================
+
+# TODO: Criar páginas de erro personalizadas
+# ErrorDocument 404 /404.html
+# ErrorDocument 500 /500.html
+
+# ========================================
+# CONFIGURAÇÕES ESPECÍFICAS DO HOTEL
+# ========================================
+
+# Bloqueia acesso a diretórios de backup
+RedirectMatch 403 /\..*$
+
+# Otimizações para formulários
+<FilesMatch "\.(php)$">
+    # Aumenta limite de upload se necessário
+    # php_value upload_max_filesize 10M
+    # php_value post_max_size 10M
+</FilesMatch>
+
+# ========================================
+# CONFIGURAÇÕES DE DESENVOLVIMENTO
+# ========================================
+
+# TODO: Remover em produção
+# Desabilita cache durante desenvolvimento
+# <IfModule mod_headers.c>
+#     Header set Cache-Control "no-cache, no-store, must-revalidate"
+#     Header set Pragma "no-cache"
+#     Header set Expires "0"
+# </IfModule>

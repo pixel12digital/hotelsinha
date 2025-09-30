@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2f5f3b">
+    
+    <!-- SEO Meta Tags -->
+    <title>Hotel Sinhá — Site Oficial</title>
+    <meta name="description" content="Hotel Sinhá - Conforto e hospitalidade em um ambiente acolhedor. Faça sua reserva e viva uma experiência única.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://hotelsinha.com.br/">
+    
+    <!-- Preload da hero para melhorar LCP -->
+    <link rel="preload" as="image" href="./assets/img/biblioteca/piscina01.webp" imagesizes="100vw">
+    <!-- Preload do poster do vídeo -->
+    <link rel="preload" as="image" href="./assets/img/biblioteca/Captura-de-tela-2025-04-04-165757.webp">
+    
+    <!-- JSON-LD: schema.org/Hotel -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Hotel",
+      "name": "Hotel Sinhá",
+      "url": "https://hotelsinha.com.br/",
+      "logo": "https://hotelsinha.com.br/assets/img/logos/logo-principal.png",
+      "image": "https://hotelsinha.com.br/assets/img/hero/hero-banner-01.webp",
+      "telephone": "+55-88-99217-2737",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "BR-222, KM 307 - ZONA RURAL",
+        "addressLocality": "Tianguá",
+        "addressRegion": "CE",
+        "postalCode": "62320-970",
+        "addressCountry": "BR"
+      }
+    }
+    </script>
+    
+    <!-- CSS crítico mínimo (reduz CLS e acelera pintura inicial) -->
+    <style>
+      :root{
+        --color-primary:#2f5f3b; --color-accent:#d4a73b; --text:#222; --muted:#6b7280;
+        --container:1200px; --radius-lg:16px;
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text)}
+      .container{max-width:var(--container);margin-inline:auto;padding-inline:16px}
+      header.site-header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+      header .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+      #hero{min-height:68vh;display:grid;place-items:center;text-align:center;color:#fff;position:relative}
+      #hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.35))}
+      #hero .hero-wrap{position:relative;z-index:1;padding:48px 16px}
+      #hero h1{font-weight:800;font-size:clamp(28px,5vw,56px);line-height:1.05;margin:0 0 12px}
+      #hero .accent{color:var(--color-accent)}
+      .btn{display:inline-block;padding:.9rem 1.25rem;border-radius:12px;background:var(--color-primary);color:#fff;text-decoration:none;font-weight:600}
+      @media (prefers-reduced-motion: reduce) { *{scroll-behavior:auto} }
+    </style>
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hotelsinha.com.br/">
+    <meta property="og:title" content="Hotel Sinhá — Site Oficial">
+    <meta property="og:description" content="Hotel Sinhá - Conforto e hospitalidade em um ambiente acolhedor. Faça sua reserva e viva uma experiência única.">
+    <meta property="og:image" content="https://hotelsinha.com.br/assets/img/ui/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hotelsinha.com.br/">
+    <meta property="twitter:title" content="Hotel Sinhá — Site Oficial">
+    <meta property="twitter:description" content="Hotel Sinhá - Conforto e hospitalidade em um ambiente acolhedor. Faça sua reserva e viva uma experiência única.">
+    <meta property="twitter:image" content="https://hotelsinha.com.br/assets/img/ui/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/img/ui/favicon.png">
+    <link rel="apple-touch-icon" href="./assets/img/ui/apple-touch-icon.png">
+    <link rel="manifest" href="./manifest.webmanifest">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header" role="banner">
+        <div class="container nav">
+            <a href="#home" class="brand" aria-label="Hotel Sinhá">
+                <picture>
+                    <source srcset="assets/img/biblioteca/logo-principal.webp" type="image/webp">
+                    <img src="assets/img/biblioteca/logo-principal.webp" alt="Hotel Sinhá" width="140" height="140" loading="eager" decoding="async">
+                </picture>
+            </a>
+            <nav aria-label="Primária">
+                <ul class="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#acomodacoes">Acomodações</a></li>
+                    <li><a href="https://maps.google.com/?q=BR-222,+KM+307,+Tianguá,+CE" target="_blank" rel="noopener noreferrer">Localização</a></li>
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+            <a href="reservas.html" class="btn btn-reserva" data-evt="cta-header">Faça sua Reserva</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" aria-label="Hero">
+        <div class="hero">
+            <div class="container hero-wrap">
+                <p class="hero-kicker">TIANGUÁ - CE | Bem-vindo ao Hotel Sinhá</p>
+                <h1>Mais que um hotel<br><span class="accent">e tranquilidade</span></h1>
+                <p class="hero-sub">Hospedagem 24h • Pet Friendly • Trilhas e Espaços para Relaxar</p>
+                <a href="reservas.html" class="btn btn-primary">Faça sua Reserva</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comodidades Section -->
+    <section id="comodidades" class="comodidades">
+        <div class="container">
+            <h2>Nossos espaços e comodidades</h2>
+            <p class="lead">Desfrute de momentos únicos em um espaço integrado à natureza.<br> Aqui, cada detalhe foi pensado para seu conforto, bem-estar e conexão com o que realmente importa.</p>
+
+            <div class="cards">
+                <article class="card">
+                    <img src="assets/img/biblioteca/AnyConv.com__rec06.webp" alt="Piscina cercada por natureza" width="1200" height="900" loading="lazy" decoding="async">
+                    <div class="card-body">
+                        <h3>Natureza &amp; Tranquilidade</h3>
+                        <p>Recarregue suas energias No coração da serra, onde a natureza abraça, o tempo desacelera e a mente encontra paz.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="assets/img/biblioteca/Sala-de-leitura.webp" alt="Sala de leitura com rede e vista para a serra" width="1200" height="900" loading="lazy" decoding="async">
+                    <div class="card-body">
+                        <h3>Sinta-se<br>em casa.</h3>
+                        <p>Acolhimento em cada detalhe, com ambientes planejados para relaxar, dormir bem e viver momentos especiais em meio à natureza.</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <img src="assets/img/biblioteca/AnyConv.com__rec12.webp" alt="Café da manhã com bolos, frutas e pães" width="1200" height="900" loading="lazy" decoding="async">
+                    <div class="card-body">
+                        <h3>Desperte os sentidos.</h3>
+                        <p>Experiências gastronômicas que aquecem o corpo e o coração, com sabores regionais e muito carinho em cada detalhe.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experiências Section -->
+    <section id="experiencias" class="experiencias">
+        <div class="container grid-2">
+            <div class="col">
+                <h2>Viva experiências únicas no Hotel Sinhá</h2>
+                <p>Conforto, lazer e conveniência em um só lugar — assista ao vídeo e descubra por que somos a escolha ideal para sua estada em Tianguá - Serra da Ibiapaba - Ceará.</p>
+                <video class="video" controls muted playsinline preload="metadata"
+                       poster="assets/img/biblioteca/AnyConv.com__rec06.webp"
+                       aria-label="Vídeo das experiências do Hotel Sinhá">
+                    <source src="assets/img/biblioteca/Video_01.mp4" type="video/mp4">
+                    Seu navegador não suporta vídeo HTML5.
+                </video>
+            </div>
+            <div class="col">
+                <!-- Controles de visualização -->
+                <div class="gallery-controls">
+                    <button class="view-toggle active" data-view="grid" aria-label="Visualização em grade">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 11h8V3H3v8zm2-6h4v4H5V5zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM16 13h2v2h-2zM16 17h2v2h-2zM20 13h2v2h-2zM20 17h2v2h-2z"/>
+                        </svg>
+                    </button>
+                    <button class="view-toggle" data-view="carousel" aria-label="Visualização em carrossel">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Galeria em Grade -->
+                <div class="gallery grid-view" aria-label="Galeria de experiências">
+                    <!-- Imagem grande - destaque principal -->
+                    <a href="assets/img/biblioteca/wepper-rec11.webp" data-lightbox="gal" class="gallery-link gallery-large">
+                        <div class="gallery-item-wrapper">
+                            <img src="assets/img/biblioteca/wepper-rec11.webp" alt="Jardim Sereno" class="gallery-item">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Jardim Sereno</h4>
+                                <p class="gallery-subtitle">Natureza exuberante</p>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Imagem média -->
+                    <a href="assets/img/biblioteca/Sala-de-Conveniencia.webp" data-lightbox="gal" class="gallery-link gallery-medium">
+                        <div class="gallery-item-wrapper">
+                            <img src="assets/img/biblioteca/Sala-de-Conveniencia.webp" alt="Sala de Conveniência" class="gallery-item">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Sala de Conveniência</h4>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Imagem pequena -->
+                    <a href="assets/img/biblioteca/rec01.webp" data-lightbox="gal" class="gallery-link gallery-small">
+                        <div class="gallery-item-wrapper">
+                            <img src="assets/img/biblioteca/rec01.webp" alt="Fachada Noturna" class="gallery-item">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Fachada Noturna</h4>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Imagem média -->
+                    <a href="assets/img/biblioteca/AnyConv.com__rec04.webp" data-lightbox="gal" class="gallery-link gallery-medium">
+                        <div class="gallery-item-wrapper">
+                            <img src="assets/img/biblioteca/AnyConv.com__rec04.webp" alt="Detalhes Especiais" class="gallery-item">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Detalhes Especiais</h4>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Imagem pequena -->
+                    <a href="assets/img/biblioteca/Sala-de-Descanso.webp" data-lightbox="gal" class="gallery-link gallery-small">
+                        <div class="gallery-item-wrapper">
+                            <img src="assets/img/biblioteca/Sala-de-Descanso.webp" alt="Área de Descanso" class="gallery-item">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Área de Descanso</h4>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <!-- Imagem grande - destaque secundário -->
+                    <a href="assets/img/biblioteca/img-01.webp" data-lightbox="gal" class="gallery-link gallery-large">
+                        <div class="gallery-item-wrapper">
+                            <img src="assets/img/biblioteca/img-01.webp" alt="Vista Panorâmica" class="gallery-item">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Vista Panorâmica</h4>
+                                <p class="gallery-subtitle">Serra da Ibiapaba</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Nova imagem média -->
+                    <a href="assets/img/biblioteca/AnyConv.com__rec05.webp" data-lightbox="gal" class="gallery-link gallery-medium">
+                        <div class="gallery-item-wrapper">
+                            <img src="assets/img/biblioteca/AnyConv.com__rec05.webp" alt="Ambiente Natural" class="gallery-item">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Ambiente Natural</h4>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Nova imagem pequena -->
+                    <a href="assets/img/biblioteca/AnyConv.com__rec07.webp" data-lightbox="gal" class="gallery-link gallery-small">
+                        <div class="gallery-item-wrapper">
+                            <img src="assets/img/biblioteca/AnyConv.com__rec07.webp" alt="Espaços Exclusivos" class="gallery-item">
+                            <div class="gallery-overlay">
+                                <h4 class="gallery-title">Espaços Exclusivos</h4>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Carrossel -->
+                <div class="carousel-container carousel-view" aria-label="Carrossel de experiências">
+                    <div class="carousel-wrapper">
+                        <button class="carousel-btn carousel-prev" aria-label="Imagem anterior">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                            </svg>
+                        </button>
+                        
+                        <div class="carousel-track">
+                            <!-- Todas as imagens da biblioteca -->
+                            <div class="carousel-slide active">
+                                <img src="assets/img/biblioteca/wepper-rec11.webp" alt="Jardim Sereno" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <h4>Jardim Sereno</h4>
+                                    <p>Natureza exuberante</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <img src="assets/img/biblioteca/Sala-de-Conveniencia.webp" alt="Sala de Conveniência" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <h4>Sala de Conveniência</h4>
+                                    <p>Conforto e praticidade</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <img src="assets/img/biblioteca/rec01.webp" alt="Fachada Noturna" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <h4>Fachada Noturna</h4>
+                                    <p>Ambiente aconchegante</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <img src="assets/img/biblioteca/AnyConv.com__rec04.webp" alt="Detalhes Especiais" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <h4>Detalhes Especiais</h4>
+                                    <p>Arquitetura única</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <img src="assets/img/biblioteca/Sala-de-Descanso.webp" alt="Área de Descanso" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <h4>Área de Descanso</h4>
+                                    <p>Relaxamento total</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-slide">
+                                <img src="assets/img/biblioteca/img-01.webp" alt="Vista Panorâmica" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <h4>Vista Panorâmica</h4>
+                                    <p>Serra da Ibiapaba</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <img src="assets/img/biblioteca/AnyConv.com__rec05.webp" alt="Ambiente Natural" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <h4>Ambiente Natural</h4>
+                                    <p>Conexão com a natureza</p>
+                                </div>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <img src="assets/img/biblioteca/AnyConv.com__rec07.webp" alt="Espaços Exclusivos" class="carousel-img">
+                                <div class="carousel-caption">
+                                    <h4>Espaços Exclusivos</h4>
+                                    <p>Privacidade e conforto</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="carousel-btn carousel-next" aria-label="Próxima imagem">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <!-- Indicadores (dots) -->
+                    <div class="carousel-indicators">
+                        <button class="carousel-dot active" aria-label="Ir para imagem 1"></button>
+                        <button class="carousel-dot" aria-label="Ir para imagem 2"></button>
+                        <button class="carousel-dot" aria-label="Ir para imagem 3"></button>
+                        <button class="carousel-dot" aria-label="Ir para imagem 4"></button>
+                        <button class="carousel-dot" aria-label="Ir para imagem 5"></button>
+                        <button class="carousel-dot" aria-label="Ir para imagem 6"></button>
+                        <button class="carousel-dot" aria-label="Ir para imagem 7"></button>
+                        <button class="carousel-dot" aria-label="Ir para imagem 8"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Avaliações Section -->
+    <section id="avaliacoes" class="avaliacoes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">O que nossos hóspedes dizem</h2>
+                <p class="section-description">Avaliações reais de quem já se hospedou conosco</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "Uma experiência incrível! O Hotel Sinhá superou todas as nossas expectativas. O atendimento é excepcional e a localização é perfeita para quem busca tranquilidade e contato com a natureza."
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Maria Silva</h4>
+                            <p>Hóspede de São Paulo</p>
+                        </div>
+                        <div class="author-avatar">
+                            <span>MS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <div class="stars">
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                            <span class="star">★</span>
+                        </div>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "Ambiente perfeito para relaxar! A piscina é linda, os quartos são aconchegantes e o café da manhã é delicioso. Voltaremos com certeza!"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>João Santos</h4>
+                            <p>Hóspede de Fortaleza</p>
+                        </div>
+                        <div class="author-avatar">
+                            <span>JS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        "Lugar mágico! A vista da serra é deslumbrante e o hotel oferece tudo que precisamos para uma estadia perfeita. Recomendo para famílias!"
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Ana Costa</h4>
+                            <p>Hóspede de Recife</p>
+                        </div>
+                        <div class="author-avatar">
+                            <span>AC</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Estatísticas -->
+            <div class="testimonials-stats">
+                <div class="stat-item">
+                    <div class="stat-number">4.9</div>
+                    <div class="stat-label">Avaliação Média</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Recomendam</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Hóspedes Satisfeitos</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section id="sobre" class="sobre">
+        <div class="container grid-2">
+            <div class="col">
+                <p class="overline">SOBRE NÓS</p>
+                <h2>O que torna o Hotel Sinhá uma escolha única</h2>
+                <p>No coração da Serra da Ibiapaba, o Hotel Sinhá une conforto, natureza e experiências inesquecíveis.<br> Nosso espaço foi pensado para proporcionar descanso, bem-estar e conexão com o que realmente importa.</p>
+                <ul class="bullets">
+                    <li>🌿 Acomodações integradas à natureza</li>
+                    <li>🐾 Pet Friendly e acessibilidade</li>
+                    <li>🥾 Trilhas e áreas de lazer exclusivas</li>
+                    <li>🍃 Gastronomia com opções Zero Lactose</li>
+                </ul>
+                <a href="reservas.html" class="btn" data-evt="cta-sobre">Faça Sua Reserva</a>
+            </div>
+            <div class="col">
+                <img src="assets/img/biblioteca/AnyConv.com__rec09.webp"
+                     alt="Restaurante do Hotel Sinhá com hóspedes"
+                     width="1200" height="900" loading="lazy" decoding="async"
+                     style="border-radius:16px; object-fit:cover; width:100%; aspect-ratio:4/3;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato CTA Section -->
+    <section id="contato-cta" class="faixa">
+        <div class="container">
+            <h2>Ficou com alguma dúvida?</h2>
+            <p>Estamos prontos para responder sua mensagem e ajudar no que for preciso.<br>Será um prazer conversar com você e tornar sua experiência ainda mais especial!</p>
+            <a href="https://wa.me/5588992172737" class="btn" data-evt="cta-faixa">Fale com a gente</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="rodape" class="footer">
+        <div class="container grid-4">
+            <div>
+                <picture>
+                    <source srcset="assets/img/biblioteca/logo-principal.webp" type="image/webp">
+                    <img src="assets/img/biblioteca/logo-principal.webp" alt="Hotel Sinhá" width="140" height="140" loading="lazy" decoding="async">
+                </picture>
+                <p>(88) 99217-2737<br>reservas@hotelsinha.com.br<br>BR-222, KM 307 - ZONA RURAL, Tianguá - CE, 62320-970</p>
+            </div>
+            <div>
+                <h4>Institucional</h4>
+                <ul>
+                    <li><a href="index.html#sobre">Sobre o Hotel</a></li>
+                    <li><a href="index.html#acomodacoes">Acomodações</a></li>
+                    <li><a href="index.html#faq">Perguntas Frequentes</a></li>
+                    <li><a href="https://maps.google.com/?q=BR-222,+KM+307,+Tianguá,+CE" target="_blank" rel="noopener noreferrer">Localização</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Serviços</h4>
+                <ul>
+                    <li><a>Clima e Natureza</a></li>
+                    <li><a>Pet Friendly</a></li>
+                    <li><a>Alimentação</a></li>
+                    <li><a>Trilhas e Atividades</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contato</h4>
+                <ul>
+                    <li><a href="reservas.html">Faça sua Reserva</a></li>
+                    <li><a href="https://maps.google.com/?q=BR-222,+KM+307,+Tianguá,+CE" target="_blank" rel="noopener noreferrer">Como Chegar</a></li>
+                    <li><a href="contato.html">Redes Sociais</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/hotelsinha" class="social-link instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram do Hotel Sinhá">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        <span>@hotelsinha</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="copy">© 2025 Criado por Pixel12Digital</div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <a href="https://wa.me/5588992172737" class="fab fab-whatsapp" aria-label="WhatsApp" data-evt="fab-whatsapp" target="_blank">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+        </a>
+        
+        <a href="tel:+5588992172737" class="fab fab-phone" aria-label="Ligar" data-evt="fab-phone">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Lightbox para galeria -->
+    <div id="lightbox" class="lightbox" role="dialog" aria-label="Visualizar imagem">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Fechar">&times;</button>
+            <img id="lightbox-image" src="" alt="">
+            <button class="lightbox-prev" aria-label="Imagem anterior">&larr;</button>
+            <button class="lightbox-next" aria-label="Próxima imagem">&rarr;</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/app.js" defer></script>
+</body>
+</html>

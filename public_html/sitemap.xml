@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- ========================================
+         HOTEL SINHÁ - SITEMAP.XML
+         ======================================== -->
+
+    <!-- Página Principal -->
+    <url>
+        <loc>https://hotelsinha.com.br/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- TODO: Adicionar páginas quando criadas -->
+    <!-- 
+    <url>
+        <loc>https://hotelsinha.com.br/acomodacoes</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://hotelsinha.com.br/localizacao</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://hotelsinha.com.br/reservas</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://hotelsinha.com.br/contato</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    -->
+
+    <!-- ========================================
+         NOTAS E CONFIGURAÇÕES
+         ======================================== -->
+    
+    <!--
+    TODO: Atualizar URLs quando domínio estiver ativo
+    TODO: Atualizar lastmod com datas reais de modificação
+    TODO: Ajustar changefreq conforme frequência de atualização
+    TODO: Revisar prioridades conforme importância das páginas
+    TODO: Adicionar páginas específicas de acomodações
+    TODO: Incluir páginas de políticas (privacidade, termos)
+    TODO: Considerar sitemap de imagens para SEO
+    -->
+
+</urlset>
