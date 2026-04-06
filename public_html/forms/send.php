@@ -18,11 +18,11 @@ define('SMTP_HOST', 'smtp.gmail.com');
 define('SMTP_PORT', 587);
 define('SMTP_USERNAME', 'seu-email@gmail.com');
 define('SMTP_PASSWORD', 'sua-senha-app');
-define('SMTP_FROM_EMAIL', 'contato@hotelsinha.com.br');
+define('SMTP_FROM_EMAIL', 'ecopousadasinha@gmail.com');
 define('SMTP_FROM_NAME', 'Hotel Sinhá');
 
 // Email de destino
-define('TO_EMAIL', 'contato@hotelsinha.com.br');
+define('TO_EMAIL', 'ecopousadasinha@gmail.com');
 define('TO_NAME', 'Hotel Sinhá');
 
 // ========================================
